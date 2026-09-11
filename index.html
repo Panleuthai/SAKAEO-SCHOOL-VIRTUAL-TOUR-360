@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sakaeo School Virtual Tour</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+
+    <div id="video-intro">
+    <video id="intro-video" autoplay muted playsinline>
+        <source src="videos/open360.mp4" type="video/mp4">
+    </video>
+</div>
+
+    <!-- ==================================================
+         1. หน้าโลโก้
+         ================================================== -->
+
+    <div id="intro">
+    <img src="images/logo2.png" alt="Sakaeo School logo">
+
+    <button id="start-tour-btn" onclick="startSchoolTour()">
+        เริ่มสำรวจโรงเรียน →
+    </button>
+</div>
+
+
+    <!-- ==================================================
+         2. เว็บไซต์หลัก
+         ================================================== -->
+
+    <div id="tour">
+
+
+        <!-- ==================================================
+             เมนูด้านบนของหน้าหลัก
+             ================================================== -->
+
+      <header class="top-menu">
+
+              <div class="school-name">
+    <img src="images/logo.png" alt="โลโก้">
+    SAKAEO SCHOOL VIRTUAL TOUR360
+</div>
+
+            <nav class="menu">
+
+    <button onclick="goMainHome()">
+        หน้าหลัก
+    </button>
+
+    <button onclick="showMainPage('school-map')">
+         แผนที่
+    </button>
+
+    <button onclick="showMainPage('school-info')">
+         ข้อมูลโรงเรียน
+    </button>
+
+    <button onclick="showMainPage('buildings')">
+         อาคารเรียน
+    </button>
+
+    <button onclick="openSchoolWebsite()">
+        โรงเรียนสระแก้ว
+    </button>
+
+    <button onclick="showMainPage('how-to-use')">
+         วิธีใช้งาน
+    </button>
+
+</nav>
+        </header>
+
+
+
+        <!-- ==================================================
+             3. หน้าหลัก
+             360 หลักของโรงเรียน
+             ================================================== -->
+
+        <section
+    id="main-home"
+    class="page active"
+>
+
+  <div class="kuula-360">
+    <iframe
+        src="https://kuula.co/share/collection/7TRxW?logo=-1&info=0&fs=1&vr=1&zoom=1&sd=1&initload=1&thumbs=0" data-width="100%" data-height="640px"></script>"
+        width="100%"
+        height="700"
+        frameborder="0"
+        allow="xr-spatial-tracking; gyroscope; accelerometer"
+        allowfullscreen
+        scrolling="no">
+    </iframe>
+</div>
+</section>
+
+
+       <!-- ==================================================
+     4. ข้อมูลโรงเรียน
+================================================== -->
+
+<section
+    id="school-info"
+    class="page info-page"
+>
+
+    <h1>
+        ข้อมูลโรงเรียน
+    </h1>
+
+
+    <!-- ข้อมูลเบื้องต้น -->
+
+    <div class="school-intro-box">
+
+        <h2>โรงเรียนสระแก้ว</h2>
+
+        <p>
+            ยินดีต้อนรับเข้าสู่ Sakaeo School Virtual Tour
+        </p>
+
+        <p>
+            เว็บไซต์ทัวร์เสมือนจริงของโรงเรียนสระแก้ว
+            สำหรับสำรวจอาคารและสถานที่ต่าง ๆ
+            ภายในโรงเรียนผ่านภาพ 360 องศา
+        </p>
+
+    </div>
+
+ <!-- ==================================================
+         คณะผู้บริหาร
+    ================================================== -->
+
+    <section class="people-section">
+
+        <h2 class="people-title">
+            คณะผู้บริหาร
+        </h2>
+
+
+        <!-- ผู้อำนวยการ -->
+
+        <div class="director-card">
+
+           <div class="person-image">
+    <img src="images/people/director.jpg" alt="นางจุฑามาส เทพหัสดิน ณ อยุธยา">
+</div> 
+
+            <div class="person-name">
+                นางจุฑามาส เทพหัสดิน ณ อยุธยา
+            </div>
+
+            <div class="person-position">
+                ผู้อำนวยการโรงเรียนสระแก้ว
+            </div>
+
+        </div>
+
+
+        <!-- รองผู้อำนวยการ 4 คน -->
+
+        <div class="deputy-grid">
+
+            <!-- รองฯ บุคคล -->
+
+            <div class="person-card">
+
+                <div class="person-image">
+    <img src="images/people/deputy-personnel.jpg" alt="นางสาวภัทธนันต์ อ่ำเทศ">
+</div>
+
+                <div class="person-name">
+                    นางสาวภัทธนันต์ อ่ำเทศ
+                </div>
+
+                <div class="person-position">
+                    รองผู้อำนวยการกลุ่มบริหารงานบุคคล
+                </div>
+
+            </div>
+
+
+            <!-- รองฯ วิชาการ -->
+
+            <div class="person-card">
+
+                <div class="person-image">
+    <img src="images/people/deputy-academic.jpg" alt="นายชวนะชัย เพชรพิรุณ">
+</div>
+
+                <div class="person-name">
+                    นายชวนะชัย เพชรพิรุณ
+                </div>
+
+                <div class="person-position">
+                    รองผู้อำนวยการกลุ่มบริหารงานวิชาการ
+                </div>
+
+            </div>
+
+
+            <!-- รองฯ ทั่วไป -->
+
+            <div class="person-card">
+
+               <div class="person-image">
+    <img src="images/people/deputy-general.jpg" alt="นายนิรุตติ์ วงคำชัย">
+</div>
+                <div class="person-name">
+                    นายนิรุตติ์ วงคำชัย
+                </div>
+
+                <div class="person-position">
+                    รองผู้อำนวยการกลุ่มบริหารงานทั่วไป
+                </div>
+
+            </div>
+
+
+            <!-- รองฯ งบประมาณ -->
+
+            <div class="person-card">
+
+               <div class="person-image">
+    <img src="images/people/deputy-budget.jpg" alt="ดร.นิภาพร รอดไพบูลย์">
+</div>
+
+                <div class="person-name">
+                    ดร.นิภาพร รอดไพบูลย์
+                </div>
+
+                <div class="person-position">
+                    รองผู้อำนวยการกลุ่มบริหารงานงบประมาณ
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         คุณครูผู้สอน
+    ================================================== -->
+
+    <section class="people-section teacher-section">
+
+        <h2 class="people-title">
+            คุณครูผู้สอน
+        </h2>
+
+
+        <div class="teacher-card">
+
+            <div class="person-image">
+    <img src="images/people/teacher.jpg" alt="นายศิรวิทย์ ซุยซวง">
+</div>
+            <div class="person-name">
+                นายศิรวิทย์ ซุยซวง
+            </div>
+
+            <div class="person-position">
+                    วิชาวิทยาการคำนวณ ว.22103
+                </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==================================================
+         ทีมพัฒนาเว็บไซต์
+    ================================================== -->
+
+    <section class="people-section website-team">
+
+        <h2 class="people-title">
+            ทีมพัฒนาเว็บไซต์
+        </h2>
+
+        <p class="people-description">
+            จัดทำโดย นักเรียนห้องเรียนพิเศษสะเต็ม (STEM)
+        </p>
+
+
+        <div class="team-grid">
+
+            <!-- ปานฤทัย -->
+
+            <div class="person-card">
+
+                <div class="person-image">
+    <img src="images/people/student1.jpg" alt="เด็กหญิงปานฤทัย ใจหาญ">
+</div>
+                <div class="person-name">
+                    เด็กหญิงปานฤทัย ใจหาญ
+                </div>
+
+                <div class="person-position">
+                    มัธยมศึกษาปีที่ 2/11
+                </div>
+
+            </div>
+
+
+            <!-- ฐิติชญาน์ -->
+
+            <div class="person-card">
+
+               <div class="person-image">
+    <img src="images/people/student2.jpg" alt="เด็กหญิงฐิติชญาน์ ศรีลาลัย">
+</div>
+
+                <div class="person-name">
+                    เด็กหญิงฐิติชญาน์ ศรีลาลัย
+                </div>
+
+                <div class="person-position">
+                    มัธยมศึกษาปีที่ 2/11
+                </div>
+
+            </div>
+
+
+            <!-- ปวิชญา -->
+
+            <div class="person-card">
+
+                <div class="person-image">
+    <img src="images/people/student3.jpg" alt="เด็กหญิงปวิชญา หมู่มาก">
+</div>
+
+                <div class="person-name">
+                    เด็กหญิงปวิชญา หมู่มาก
+                </div>
+
+                <div class="person-position">
+                    มัธยมศึกษาปีที่ 2/11
+                </div>
+
+            </div>
+
+
+            <!-- ชลดา -->
+
+            <div class="person-card">
+
+                <div class="person-image">
+    <img src="images/people/student4.jpg" alt="เด็กหญิงชลดา โงนเนียม">
+</div>
+
+                <div class="person-name">
+                    เด็กหญิงชลดา โงนเนียม
+                </div>
+
+                <div class="person-position">
+                    มัธยมศึกษาปีที่ 2/11
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+   
+
+</section>
+<!-- ==================================================
+     หน้าแผนที่โรงเรียน
+================================================== -->
+
+<section
+    id="school-map"
+    class="page map-page"
+>
+
+    <h1>
+         แผนที่โรงเรียนสระแก้ว
+    </h1>
+
+    <p class="page-description">
+        ตำแหน่งโรงเรียนสระแก้วบน Google Maps
+    </p>
+
+
+    <div class="map-box">
+
+        <!--
+            Google Maps
+            ตอนนี้เป็นแผนที่ตัวอย่าง
+            ภายหลังเราจะใส่ตำแหน่งโรงเรียนจริง
+        -->
+
+        <iframe
+            src="https://www.google.com/maps?q=โรงเรียนสระแก้ว&output=embed"
+            width="100%"
+            height="500"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</section>
+
+<!-- ==================================================
+     หน้าแนะนำการใช้งาน
+================================================== -->
+
+<section
+    id="how-to-use"
+    class="page guide-page"
+>
+
+    <h1>
+        📖 คำแนะนำการใช้งาน
+    </h1>
+
+    <p class="page-description">
+        วิธีใช้งานเว็บไซต์ Sakaeo School 360
+    </p>
+
+
+    <div class="guide-box">
+
+        <div class="guide-item">
+
+            <div class="guide-icon">
+                🏠
+            </div>
+
+            <div>
+                <h2>หน้าหลัก</h2>
+
+                <p>
+                    ชมภาพ 360 องศาของโรงเรียน
+                    และสำรวจสถานที่ต่าง ๆ
+                    ภายในโรงเรียน
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="guide-item">
+
+            <div class="guide-icon">
+                🖱️
+            </div>
+
+            <div>
+                <h2>การดูภาพ 360°</h2>
+
+                <p>
+                    ใช้เมาส์ลากเพื่อหมุนมุมมอง
+                    และใช้เมาส์เพื่อซูมเข้า–ออก
+                    หากใช้โทรศัพท์หรือแท็บเล็ต
+                    สามารถใช้นิ้วลากเพื่อหมุนภาพได้
+                </p>
+                    <img src="images/guide1.jpg" class="guide-image">
+            </div>
+
+        </div>
+
+
+        <div class="guide-item">
+
+            <div class="guide-icon">
+                📍
+            </div>
+
+            <div>
+                <h2>สถานที่สำคัญ</h2>
+
+                <p>
+                    กดจุดหรือไอคอนของสถานที่สำคัญ
+                    บนภาพ 360°
+                    เพื่อเข้าสู่สถานที่นั้น
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="guide-item">
+
+            <div class="guide-icon">
+                🏢
+            </div>
+
+            <div>
+                <h2>อาคารเรียน</h2>
+
+                <p>
+                    กดเมนู “อาคารเรียน”
+                    เพื่อดูรายชื่ออาคารต่าง ๆ
+                    และเลือกอาคารที่ต้องการชม
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="guide-item">
+
+            <div class="guide-icon">
+                📋
+            </div>
+
+            <div>
+                <h2>ดูรายละเอียดอาคาร</h2>
+
+                <p>
+                    เมื่อเข้าชม 360° ของอาคาร
+                    สามารถกดปุ่ม “ดูรายละเอียด”
+                    เพื่ออ่านข้อมูลเพิ่มเติมเกี่ยวกับอาคาร
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="guide-item">
+
+            <div class="guide-icon">
+                🗺️
+            </div>
+
+            <div>
+                <h2>แผนที่</h2>
+
+                <p>
+                    ใช้เมนู “แผนที่”
+                    เพื่อดูตำแหน่งของโรงเรียน
+                    และสามารถเปิด Google Maps
+                    เพื่อใช้สำหรับการนำทางได้
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="guide-item">
+
+            <div class="guide-icon">
+                🏠
+            </div>
+
+            <div>
+                <h2>กลับหน้าหลัก</h2>
+
+                <p>
+                    กดปุ่ม “หน้าหลัก”
+                    เพื่อกลับไปยังภาพ 360°
+                    หลักของโรงเรียน
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- ==================================================
+             5. รายชื่ออาคาร
+             ================================================== -->
+
+        <section
+            id="buildings"
+            class="page info-page"
+        >
+
+            <h1>
+                อาคารเรียน
+            </h1>
+
+
+            <p class="page-description">
+    รายชื่ออาคารและสถานที่ภายในโรงเรียนสระแก้ว
+</p>
+
+
+<!-- ==================================================
+     หมวดหมู่อาคารและสถานที่
+================================================== -->
+
+<div id="building-categories" class="building-categories">
+
+    <!-- หมวด 1 -->
+    <div
+        class="category-card category-building"
+        onclick="showBuildingCategory('building')"
+    >
+
+        <div class="category-icon">
+            <img src="images/icon3.png" alt="อาคารและสถานที่">
+        </div>
+
+        <div class="category-content">
+
+            <h2>
+                อาคารและสถานที่
+            </h2>
+
+            <p>
+                อาคารเรียนและสถานที่ภายในโรงเรียน
+            </p>
+
+            <span>
+                12 แห่ง
+            </span>
+
+        </div>
+
+        <div class="category-arrow">
+            →
+        </div>
+
+    </div>
+
+
+    <!-- หมวด 2 -->
+    <div
+        class="category-card category-food"
+        onclick="showBuildingCategory('food')"
+    >
+
+        <div class="category-icon">
+            <img src="images/icon2.png" alt="อาหารและร้านค้า">
+        </div>
+
+        <div class="category-content">
+
+            <h2>
+                อาหารและร้านค้า
+            </h2>
+
+            <p>
+                พื้นที่อาหาร ร้านค้า และบริการต่าง ๆ
+            </p>
+
+            <span>
+                3 แห่ง
+            </span>
+
+        </div>
+
+        <div class="category-arrow">
+            →
+        </div>
+
+    </div>
+
+
+    <!-- หมวด 3 -->
+    <div
+        class="category-card category-activity"
+        onclick="showBuildingCategory('activity')"
+    >
+
+        <div class="category-icon">
+            <img src="images/icon1.png" alt="พื้นที่กิจกรรม">
+        </div>
+
+        <div class="category-content">
+
+            <h2>
+                พื้นที่กิจกรรม
+            </h2>
+
+            <p>
+                พื้นที่สำหรับกิจกรรมและการใช้งานร่วมกัน
+            </p>
+
+            <span>
+                3 แห่ง
+            </span>
+
+        </div>
+
+        <div class="category-arrow">
+            →
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================================================
+     หัวข้อเมื่อเข้าไปในหมวด
+================================================== -->
+
+<div
+    id="building-category-header"
+    class="building-category-header"
+>
+
+    <button onclick="showAllBuildingCategories()">
+        ← หมวดทั้งหมด
+    </button>
+
+    <h2 id="building-category-title">
+        อาคารและสถานที่
+    </h2>
+
+</div>
+
+
+<!-- ==================================================
+     รายการอาคารเดิม
+================================================== -->
+
+<div class="building-list">
+
+
+           <div class="building-list">
+
+    <!-- อาคาร 1 -->
+    <div class="building-card" onclick="openBuilding(1)">
+        <img src="images/buildings/buildings1.jpg" alt="อาคาร 1">
+        <span>อาคาร 1</span>
+    </div>
+
+    <!-- อาคาร 2 -->
+    <div class="building-card" onclick="openBuilding(2)">
+        <img src="images/buildings/buildings2.jpg" alt="อาคาร 2">
+        <span>อาคาร 2</span>
+    </div>
+
+    <!-- อาคาร 3 -->
+    <div class="building-card" onclick="openBuilding(3)">
+        <img src="images/buildings/buildings3.jpg" alt="อาคาร 3">
+        <span>อาคาร 3</span>
+    </div>
+
+    <!-- อาคาร 4 -->
+    <div class="building-card" onclick="openBuilding(4)">
+        <img src="images/buildings/buildings4.jpg" alt="อาคาร 4">
+        <span>อาคาร 4</span>
+    </div>
+
+    <!-- อาคาร 5 -->
+    <div class="building-card" onclick="openBuilding(5)">
+        <img src="images/buildings/buildings5.jpg" alt="อาคาร 5">
+        <span>อาคาร 5</span>
+    </div>
+
+    <!-- อาคาร 6 -->
+    <div class="building-card" onclick="openBuilding(6)">
+        <img src="images/buildings/buildings6.jpg" alt="อาคาร 6">
+        <span>อาคาร 6</span>
+    </div>
+
+    <!-- อาคาร 7 -->
+    <div class="building-card" onclick="openBuilding(7)">
+        <img src="images/buildings/buildings7.jpg" alt="อาคาร 7">
+        <span>อาคาร 7</span>
+    </div>
+
+    <!-- อาคาร 8 -->
+    <div class="building-card" onclick="openBuilding(8)">
+        <img src="images/buildings/buildings8.jpg" alt="อาคาร 8">
+        <span>อาคาร 8</span>
+    </div>
+
+    <!-- หอประชุมบุญเล็ก-->
+    <div class="building-card" onclick="openBuilding(9)">
+        <img src="images/buildings/buildings9.jpg" alt="หอประชุมบุญเล็ก">
+        <span>หอประชุมบุญเล็ก</span>
+    </div>
+
+    <!-- โดม ร.10 -->
+    <div class="building-card" onclick="openBuilding(10)">
+        <img src="images/buildings/buildings10.jpg" alt="โดม ร.10">
+        <span>โดม ร.10</span>
+    </div>
+
+    <!-- โดมดอกแก้ว -->
+    <div class="building-card" onclick="openBuilding(11)">
+        <img src="images/buildings/buildings11.jpg" alt="โดมดอกแก้ว">
+        <span>โดมดอกแก้ว</span>
+    </div>
+
+    <!-- โรงอาหาร-->
+    <div class="building-card" onclick="openBuilding(13)">
+        <img src="images/buildings/buildings13.jpg" alt="โรงอาหาร">
+        <span>โรงอาหาร</span>
+    </div>
+
+    <!-- ห้องสมุด -->
+    <div class="building-card" onclick="openBuilding(14)">
+        <img src="images/buildings/buildings14.jpg" alt="ห้องสมุด">
+        <span>ห้องสมุด</span>
+    </div>
+
+    <!-- ตึกอุตสาหกรรม-->
+    <div class="building-card" onclick="openBuilding(15)">
+        <img src="images/buildings/buildings15.jpg" alt="ตึกอุตสาหกรรม">
+        <span>ตึกอุตสาหกรรม และ คหกรรม</span>
+    </div>
+
+    <!-- จิตละมุน-->
+    <div class="building-card" onclick="openBuilding(16)">
+        <img src="images/buildings/buildings16.jpg" alt="จิตละมุน">
+        <span>จิตละมุน</span>
+    </div>
+
+    <!-- สำนักงานผู้อำนวยการ -->
+    <div class="building-card" onclick="openBuilding(17)">
+        <img src="images/buildings/buildings17.jpg" alt="สำนักงานผู้อำนวยการ">
+        <span>สำนักงานผู้อำนวยการ</span>
+    </div>
+
+    <!-- ปกครอง -->
+    <div class="building-card" onclick="openBuilding(20)">
+        <img src="images/buildings/buildings20.jpg" alt="ปกครอง">
+        <span>ปกครอง</span>
+    </div>
+
+    <!-- สหกรณ์-->
+    <div class="building-card" onclick="openBuilding(21)">
+        <img src="images/buildings/buildings21.jpg" alt="สหกรณ์">
+        <span>สหกรณ์</span>
+    </div>
+
+    <!-- ห้องสื่อมัลติมีเดีย-->
+    <div class="building-card" onclick="openBuilding(22)">
+        <img src="images/buildings/buildings6-1.jpg" alt="ห้องสื่อมัลติมีเดีย">
+        <span>ห้องสื่อมัลติมีเดีย</span>
+    </div>
+
+    <!-- ห้องโสต-->
+    <div class="building-card" onclick="openBuilding(23)">
+        <img src="images/buildings/buildings5-1.jpg" alt="ห้องโสต">
+        <span>ห้องโสต</span>
+    </div>
+
+</div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+     ข้อมูลรายละเอียดอาคาร
+================================================== -->
+
+<section
+    id="building-info"
+    class="page building-info-page"
+>
+
+    <h1 id="building-info-title">
+        ข้อมูลอาคาร
+    </h1>
+
+    <!-- รายการสถานที่สำคัญ -->
+    <div
+        id="building-detail-list"
+        class="building-detail-list">
+    </div>
+
+    <!-- ปุ่มด้านล่าง -->
+    <div class="building-info-buttons">
+
+        <!-- กลับไป 360 ของอาคารที่กำลังดู -->
+        <button onclick="goBuildingPanorama()">
+            กลับไป 360 อาคาร
+        </button>
+
+    </div>
+
+</section>
+            
+        <!-- ==================================================
+     หน้า 360 ของอาคาร
+================================================== -->
+
+<section
+    id="building-panorama"
+    class="page building-panorama-page"
+>
+
+    <h1 id="current-building-name">
+        อาคาร
+    </h1>
+
+    <div class="building-panorama-container">
+
+        <iframe
+            id="building-panorama-frame"
+            src=""
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+
+    <div class="building-panorama-buttons">
+
+        <button onclick="showBuildingInfo()">
+            📋 ดูรายละเอียด
+        </button>
+
+       <button onclick="goBuildingList()">
+            🏢 กลับหน้าอาคาร
+        </button>
+
+    </div>
+
+</section>
+
+
+    </div>
+
+
+
+    <!-- ==================================================
+         JavaScript
+         ================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
