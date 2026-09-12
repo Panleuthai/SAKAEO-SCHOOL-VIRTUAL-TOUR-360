@@ -564,181 +564,91 @@ button {
 
 
 /* ==================================================
-   รายชื่ออาคาร
+   รายชื่ออาคาร (สำหรับจอคอมพิวเตอร์)
 ================================================== */
 
 .building-list {
-    max-width: 1100px;
-
-    margin: 30px auto;
-
+    max-width: 1400px;
+    
+    /* จัดระยะ margin ให้อยู่กึ่งกลางหน้าจอเสมอ */
+    margin: 30px auto !important; 
+    padding: 0 20px;
+    
     display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(210px, 1fr)
-        );
-
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
+    
+    /* 👈 เพิ่มบรรทัดนี้ เพื่อสั่งให้การ์ดทั้งหมดขยับมาตรงกลาง ไม่กองไปทางซ้าย */
+    justify-content: center; 
 }
 
 
 .building-card {
-    min-height: 120px;
-
-    padding: 25px;
-
+    min-height: auto;
+    padding: 0 0 18px 0;
     display: flex;
-
     flex-direction: column;
-
-    justify-content: center;
-
+    justify-content: flex-start;
     align-items: center;
-
-    gap: 12px;
-
     background: white;
-
     border: 2px solid #dcebd2;
-
-    border-radius: 18px;
-
+    border-radius: 16px;
     color: #245927;
-
-    font-size: 20px;
-
+    font-size: 16px;
     font-weight: bold;
-
-    box-shadow:
-        0 5px 15px
-        rgba(0, 0, 0, 0.08);
-
-    cursor: default;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.building-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.building-card img {
+    width: 100%;
+    /* ปรับความสูงรูปภาพให้สมส่วนกับการ์ดขนาด 4-5 คอลัมน์ */
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
 
 .building-card span {
     display: block;
+    padding: 12px 10px 0 10px;
+    text-align: center;
+    word-break: break-word;
 }
-/* รูปภาพอาคาร */
-.building-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    display: block;
-    border-radius: 12px 12px 0 0;
-}
-
 
 /* ==================================================
-   เมนูหน้าอาคาร
+   📱 Adjustments สำหรับจอ iPad / มือถือ (เพื่อไม่ให้กระทบจอเล็ก)
 ================================================== */
 
-.building-menu {
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
-    width: 100%;
-
-    min-height: 75px;
-
-    padding: 12px 30px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    background: rgba(255, 255, 255, 0.97);
-
-    box-shadow:
-        0 3px 15px
-        rgba(0, 0, 0, 0.15);
-
-    z-index: 1000;
+@media (max-width: 1024px) {
+    .building-list {
+        max-width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+    }
 }
 
+@media (max-width: 768px) {
+    .building-list {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+        padding: 0 10px;
+    }
 
-.building-name {
-    font-size: 23px;
+    .building-card img {
+        height: 120px;
+    }
 
-    font-weight: bold;
-
-    color: #176b35;
-
-    white-space: nowrap;
+    .building-card span {
+        font-size: 14px;
+    }
 }
-
-
-.building-menu-buttons {
-    display: flex;
-
-    gap: 8px;
-
-    flex-wrap: wrap;
-
-    justify-content: flex-end;
-}
-
-
-.building-menu-buttons button {
-    border: 2px solid #176b35;
-
-    padding: 10px 16px;
-
-    background: white;
-
-    color: #176b35;
-
-    font-size: 16px;
-
-    font-weight: bold;
-
-    border-radius: 10px;
-
-    transition: 0.25s;
-}
-
-
-.building-menu-buttons button:hover {
-    background: #176b35;
-
-    color: white;
-}
-
-
-/* ==================================================
-   360 อาคาร
-================================================== */
-
-.building-panorama-page {
-    width: 100%;
-
-    height: 100vh;
-
-    padding-top: 75px;
-
-    background: #dfead5;
-}
-
-
-.building-panorama-page img {
-    width: 100%;
-
-    height: calc(100vh - 75px);
-
-    display: block;
-
-    object-fit: cover;
-}
-
 
 /* ==================================================
    ข้อมูลอาคาร
@@ -4950,3 +4860,73 @@ button {
         -webkit-tap-highlight-color: transparent;
     }
 }
+/* ==================================================
+   📱 แก้ไขเฉพาะ iPad (ทั้งแนวตั้งและแนวนอน)
+================================================== */
+
+/* iPad แนวตั้ง (Portrait) -> ขยายเต็มพื้นที่ แสดง 2 ช่องใหญ่ */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* ปลดล็อก Container แม่ ไม่ให้บีบพื้นที่ */
+    .info-page,
+    #buildings {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* จัดการ์ดแสดง 2 ช่องใหญ่ๆ กึ่งกลาง */
+    .building-list {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        width: 100% !important;
+        max-width: 90% !important;
+        margin: 25px auto !important;
+        gap: 20px !important;
+    }
+
+    .building-card {
+        width: 100% !important;
+    }
+
+    .building-card img {
+        width: 100% !important;
+        height: 200px !important;
+        object-fit: cover !important;
+    }
+}
+
+/* iPad แนวนอน (Landscape) -> ขยายเต็มพื้นที่ แสดง 3 ช่องใหญ่ */
+@media (min-width: 1025px) and (max-width: 1366px) {
+    /* ปลดล็อก Container แม่ ไม่ให้บีบพื้นที่ */
+    .info-page,
+    #buildings {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* จัดการ์ดแสดง 3 ช่องใหญ่ๆ กึ่งกลาง */
+    .building-list {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        width: 100% !important;
+        max-width: 95% !important;
+        margin: 25px auto !important;
+        gap: 24px !important;
+    }
+
+    .building-card {
+        width: 100% !important;
+    }
+
+    .building-card img {
+        width: 100% !important;
+        height: 190px !important;
+        object-fit: cover !important;
+    }
+}
+
