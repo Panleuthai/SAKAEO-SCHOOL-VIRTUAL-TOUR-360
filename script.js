@@ -952,7 +952,7 @@ function goBuildingPanorama() {
     if (buildingName) {
 
         buildingName.textContent =
-            "🌀 " + building.name;
+             building.name;
 
     }
 
